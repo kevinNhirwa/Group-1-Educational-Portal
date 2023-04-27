@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Course pay";
+}
+
+<h2 class="mt-auto">Course Welcome</h2>
+
+<ul>
+    welcome:
+    @for (int i = 0; i < (int)ViewData["id"]; i++)
+{
+<li>@ViewData["userName"]</li>
+}
+</ul>
