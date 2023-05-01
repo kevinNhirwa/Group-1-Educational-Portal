@@ -13,7 +13,6 @@
   <ItemGroup>
     <Folder Include="Views\Parent\" />
     <Folder Include="Views\Student\" />
-    <Folder Include="Views\SignUp\" />
   </ItemGroup>
 
 </Project>
