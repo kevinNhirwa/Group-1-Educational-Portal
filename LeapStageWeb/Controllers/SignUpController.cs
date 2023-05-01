@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LeapStageWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LeapStageWeb.Controllers
@@ -13,7 +14,9 @@ namespace LeapStageWeb.Controllers
             return View();
         }
 
-        public IActionResult Create()
+
+        [HttpPost]
+        public IActionResult Create([Bind("Id,fullName,email,password,phoneNum,isParent")] Parent parent)
         {
 
             return View();
