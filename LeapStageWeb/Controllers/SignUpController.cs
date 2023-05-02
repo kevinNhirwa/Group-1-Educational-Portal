@@ -18,7 +18,7 @@ namespace LeapStageWeb.Controllers
 
 
         [HttpPost]
-        public IActionResult Create(Parent parent)
+        public IActionResult Create([Bind("Id,fullName,email,phone,password")] Parent parent)
         {
             using (SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=LeapStageDB;Integrated Security=True"))
             {
