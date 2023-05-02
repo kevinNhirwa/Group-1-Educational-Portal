@@ -11,7 +11,7 @@ namespace LeapStageWeb.Models
         public string fullName { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-        public int phoneNum { get; set; }
+        public int phone { get; set; }
         private Boolean isParent { get; set; }
     }
 }

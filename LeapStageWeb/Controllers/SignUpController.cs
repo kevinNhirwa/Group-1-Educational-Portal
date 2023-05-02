@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using LeapStageWeb.Models;
@@ -16,8 +18,23 @@ namespace LeapStageWeb.Controllers
 
 
         [HttpPost]
-        public IActionResult Create([Bind("Id,fullName,email,password,phoneNum,isParent")] Parent parent)
+        public IActionResult Create(Parent parent)
         {
+            using (SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=LeapStageDB;Integrated Security=True"))
+            {
+                using (SqlCommand cmd = new SqlCommand("registerParent", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@fullName", parent.fullName);
+                    cmd.Parameters.AddWithValue("@email", parent.email);
+                    cmd.Parameters.AddWithValue("@phone", parent.phone);
+                    cmd.Parameters.AddWithValue("@password", parent.password);
+                    cmd.ExecuteNonQuery();
+                    
+                }
+            }
+
 
             return View();
         }
