@@ -22,7 +22,7 @@ namespace LeapStageWeb.Controllers
         {
             using (SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=LeapStageDB;Integrated Security=True"))
             {
-                using (SqlCommand cmd = new SqlCommand("registerParent", con))
+                using (SqlCommand cmd = new SqlCommand("registerParent1", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
@@ -30,6 +30,7 @@ namespace LeapStageWeb.Controllers
                     cmd.Parameters.AddWithValue("@email", parent.email);
                     cmd.Parameters.AddWithValue("@phone", parent.phone);
                     cmd.Parameters.AddWithValue("@password", parent.password);
+                    cmd.Parameters.AddWithValue("@isParent", true);
                     cmd.ExecuteNonQuery();
                     
                 }

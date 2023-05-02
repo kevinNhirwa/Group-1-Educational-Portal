@@ -15,4 +15,10 @@
     <Folder Include="Views\Student\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Shared\_Layout-Logged.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>
