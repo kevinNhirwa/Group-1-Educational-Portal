@@ -8,7 +8,7 @@ namespace LeapStageWeb.Controllers
 {
     public class LoginController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index([Bind("Id,fullName,email,phone,password")] Parent parent)
         {
             return View();
         }
