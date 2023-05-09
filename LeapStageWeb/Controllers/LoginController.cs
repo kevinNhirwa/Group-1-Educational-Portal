@@ -34,13 +34,14 @@ namespace LeapStageWeb.Controllers
                     {
 
 
-                        //List<Parent> parent = cmd.DataReader()
+                        List<Parent> parents;
+                        parents = (List<Parent>) reader.GetEnumerator();
 
                     }
                 }
             }
 
-            return View("../Courses/Index");
+            return View("../Parent/Index",parent);
         }
 
 
